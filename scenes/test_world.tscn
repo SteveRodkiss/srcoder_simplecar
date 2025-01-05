@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=3 uid="uid://n37iul2v5eoh"]
+
+[ext_resource type="Material" uid="uid://by0b17dfklqt6" path="res://materials/grid_orange_01.material" id="1_5jl7s"]
+[ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="2_6a1lk"]
+[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="3_h37eh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_li43q"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_t35q8"]
+sky_material = SubResource("ProceduralSkyMaterial_li43q")
+
+[sub_resource type="Environment" id="Environment_mu8pw"]
+background_mode = 2
+sky = SubResource("Sky_t35q8")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="TestWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mu8pw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry"]
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, -10, 1, 6.08779)
+use_collision = true
+size = Vector3(3, 1, 9)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 0)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, -33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -10, 1, -5.91221)
+use_collision = true
+size = Vector3(3, 1, 9)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 0)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 33)
+material_override = ExtResource("1_5jl7s")
+use_collision = true
+size = Vector3(33, 1, 33)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.5, -0.132245, 6.79398)
+use_collision = true
+size = Vector3(8, 1, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.5, -0.132245, 7.79398)
+use_collision = true
+size = Vector3(8, 1, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.5, -0.132245, 8.79398)
+use_collision = true
+size = Vector3(8, 1, 1)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.5, -0.132245, 9.79398)
+use_collision = true
+size = Vector3(8, 1, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.5, -0.132245, 10.794)
+use_collision = true
+size = Vector3(8, 1, 1)
+
+[node name="car" parent="." instance=ExtResource("2_6a1lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171483, 1.06958, -4.64135)
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("3_h37eh")]
+follow_target = NodePath("../car")
